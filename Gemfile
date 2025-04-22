@@ -51,8 +51,7 @@ group :test do
 end
 
 # PDF generation gems
-gem 'pdfkit'
-gem 'wkhtmltopdf-binary'
+
 
 # Wicked PDF for handling PDF generation
 gem "wicked_pdf"
