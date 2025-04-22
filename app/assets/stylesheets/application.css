@@ -118,15 +118,15 @@ body {
     width: 100%;
     display: flex;
     justify-content: center; /* Centers the content horizontally */
-    align-items: center; /* Centers the content vertically */
-    
+
   }
   
   /* Aligns the logo and text side by side */
   .logo {
+    margin-top: -40px;
     display: flex;
     align-items: center; /* Vertically centers the items */
-    gap: 10px; /* Adds space between the logo and text */
+
   }
   
   /* Styles the logo image */
