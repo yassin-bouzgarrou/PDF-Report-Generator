@@ -4,14 +4,14 @@ source "https://rubygems.org"
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Active Record (change if using a different DB like PostgreSQL)
 gem "sqlite3", ">= 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+# gem "redis", ">= 4.0.1"  # Uncomment this if you plan to use Redis in production
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -50,12 +50,22 @@ group :test do
   gem "selenium-webdriver"
 end
 
-
+# PDF generation gems
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
 
+# Wicked PDF for handling PDF generation
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
+
+# Tailwind CSS integration for Rails
 gem "tailwindcss-rails"
+
+# Import maps for JavaScript management in Rails
 gem 'importmap-rails'
 
+# If you're deploying to Heroku, uncomment the following line
+# gem 'rails_12factor'  # Uncomment if deploying to Heroku
+
+# If you plan to use PostgreSQL, swap sqlite3 with the following (remove sqlite3)
+# gem 'pg', '>= 1.1'
