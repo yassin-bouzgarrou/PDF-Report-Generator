@@ -59,7 +59,7 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
 # Tailwind CSS integration for Rails
-gem "tailwindcss-rails"
+
 
 # Import maps for JavaScript management in Rails
 gem 'importmap-rails'
