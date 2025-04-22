@@ -1,29 +1,40 @@
-<<<<<<< HEAD
-# PDF-Report-Generator
-Technical Task – Rails PDF Report Generator
-=======
-# README
+# 🛡️ Threat Intelligence Report Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails application that transforms an HTML-based threat intelligence report into a branded, professional PDF report.
 
-Things you may want to cover:
+## 🚀 Features
 
-* Ruby version
+- Integrates provided HTML template and sample data into a Rails view
+- Applies Oktoboot branding (logo, colors, and charts)
+- Generates clean, client-ready PDFs
+- Supports responsive and elegant design
 
-* System dependencies
+## 💻 Development Environment
 
-* Configuration
+- OS: macOS (tested on macOS Ventura / Monterey)
+- Ruby on Rails environment set up with Homebrew
 
-* Database creation
+## 📸 Screenshot
 
-* Database initialization
 
-* How to run the test suite
+![Threat Intelligence Report Screenshot](app/assets/images/5a7fc83c-6226-4f92-bc75-2f2fd07c9b33.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🧰 Tech Stack
 
-* Deployment instructions
+- **Framework:** Ruby on Rails
+- **PDF Generation:** `wkhtmltopdf`
+- **Styling:** CSS
+- **Charts:**  Integrated interactive charts using [Chart.js](https://www.chartjs.org/)
 
-* ...
->>>>>>> ed6822e (push work)
+## 🏗️ Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git https://github.com/yassin-bouzgarrou/PDF-Report-Generator
+   bundle install
+   rails s
+
+   
+
+   
+
