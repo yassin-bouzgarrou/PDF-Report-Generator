@@ -17,7 +17,8 @@ A Ruby on Rails application that transforms an HTML-based threat intelligence re
 ## 📸 Screenshot
 
 
-![Threat Intelligence Report Screenshot](app/assets/images/5a7fc83c-6226-4f92-bc75-2f2fd07c9b33.png)
+![image](https://github.com/user-attachments/assets/9b3cf68b-c534-4d1d-a942-4375fa567994)
+
 
 ## 🧰 Tech Stack
 
