@@ -11,7 +11,7 @@ A Ruby on Rails application that transforms an HTML-based threat intelligence re
 
 ## 💻 Development Environment
 
-- OS: macOS (tested on macOS Ventura / Monterey)
+- OS: macOS
 - Ruby on Rails environment set up with Homebrew
 
 ## 📸 Screenshot
