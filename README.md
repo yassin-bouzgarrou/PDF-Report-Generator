@@ -2,6 +2,13 @@
 
 A Ruby on Rails application that transforms an HTML-based threat intelligence report into a branded, professional PDF report.
 
+
+# 🌐 Live Demo
+🔗 Deployed on Render:
+👉 https://pdf-report-generator.onrender.com/
+
+⚠️ Please note: It may take a few seconds to load as the app is hosted on a free Render tier.
+
 ## 🚀 Features
 
 - Integrates provided HTML template and sample data into a Rails view
