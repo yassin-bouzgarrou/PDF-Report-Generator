@@ -1,6 +1,5 @@
 class ReportsController < ApplicationController
   def show
-    
     @report = {
       id: 1,
       domain: "example.com",
@@ -29,6 +28,7 @@ class ReportsController < ApplicationController
           ip: "203.0.113.5",
           domain: "asset.example.com",
           isp: "ISP Corp",
+          risk: " Corp",
           open_ports: [
             { port: 80, module: "http", version: "1.1", ssl: "N/A" }
           ],
@@ -47,6 +47,7 @@ class ReportsController < ApplicationController
         shared_with: ["other1.com", "other2.com"]
       },
       whois: {
+        domain: "shaed.com",
         registrar: "Registrar A",
         created: "2020-01-01",
         updated: "2023-01-01",
@@ -115,8 +116,6 @@ class ReportsController < ApplicationController
         }
       }
     }
-
-    
   end
 
   def export_pdf
@@ -232,14 +231,50 @@ class ReportsController < ApplicationController
           domain: "shared1.com",
           shared_with: ["other1.com", "other2.com"]
         }
-      }
+      },
+      riskChart:[20, 8, 12],
+      assetChart:[12, 5, 8, 3]
     }
-    pdf_html = render_to_string(template: 'reports/pdf', locals: { report: @report })
-    pdf = WickedPdf.new.pdf_from_string(pdf_html)
+    
+    #  unique filenames
+    timestamp = Time.now.to_i
+    
+    # Create temporary files for the report data and output
+    temp_data_file = Rails.root.join('tmp', "report_data_#{@report[:domain]}_#{timestamp}.json")
+    output_file_path = Rails.root.join('tmp', "report_#{@report[:domain]}_#{timestamp}.pdf")
+    
+    begin
 
-    send_data pdf, filename: "threat_report_#{@report[:domain]}.pdf", type: "application/pdf", disposition: "inline"
+      File.write(temp_data_file, JSON.dump(@report))
+      
+
+      template_path = Rails.root.join( 'v2.html')
+      
+
+      node_script_path = Rails.root.join('node_scripts', 'generate_pdf.js')
+      
+      command = "node #{node_script_path} '#{template_path}' '#{temp_data_file}' '#{output_file_path}'"
+      Rails.logger.info("Executing command: #{command}")
+      
+      success = system(command)
+      
+     
+      if success && File.exist?(output_file_path)
+     
+        send_file output_file_path, 
+                  filename: "threat_report_#{@report[:domain]}.pdf", 
+                  type: "application/pdf", 
+                  disposition: "inline"
+      else
+      
+        Rails.logger.error("Failed to generate PDF. Node.js script execution failed.")
+        render plain: "Failed to generate PDF", status: :unprocessable_entity
+      end
+    rescue => e
+      Rails.logger.error("PDF generation error: #{e.message}")
+      render plain: "Error generating PDF: #{e.message}", status: :internal_server_error
+    ensure
+    
+    end
   end
-
-
-  
 end
