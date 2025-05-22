@@ -5,7 +5,7 @@ const Handlebars = require('handlebars');
 
 
 
-
+//Converts an object  to jason
 
 Handlebars.registerHelper('json', function (context) {
   return JSON.stringify(context);
@@ -51,7 +51,7 @@ async function generatePdf(templatePath, dataPath, outputPath) {
 
     // all the data here
     const rawData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-    const logoPath = path.join(__dirname, 'public', '3.png');
+    const logoPath = path.join(__dirname, 'public', 'test.png');
     const logoBase64 = fs.existsSync(logoPath)
     ? fs.readFileSync(logoPath).toString('base64')
     : null;

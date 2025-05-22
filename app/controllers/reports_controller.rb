@@ -235,8 +235,12 @@ class ReportsController < ApplicationController
       riskChart:[20, 8, 12],
       assetChart:[12, 5, 8, 3]
     }
+
+
+
     
-    #  unique filenames
+    
+
     timestamp = Time.now.to_i
     
     # Create temporary files for the report data and output
