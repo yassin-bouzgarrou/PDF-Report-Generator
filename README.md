@@ -21,10 +21,6 @@ A Ruby on Rails application that transforms an HTML-based threat intelligence re
 - OS: macOS
 - Ruby on Rails environment set up with Homebrew
 
-## 📸 Screenshot
-
-
-![image](https://github.com/user-attachments/assets/9b3cf68b-c534-4d1d-a942-4375fa567994)
 
 
 ## 🧰 Tech Stack
